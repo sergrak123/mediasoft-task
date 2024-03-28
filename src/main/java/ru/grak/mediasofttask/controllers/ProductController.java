@@ -37,13 +37,9 @@ public class ProductController {
     @Operation(summary = "Get product details by ID")
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable(value = "id") UUID productId) {
-        try {
-            Product product = productService.getProductById(productId);
-            return ResponseEntity.ok().body(product);
 
-        } catch (ProductNotFoundException e) {
-            return ResponseEntity.notFound().build();
-        }
+        Product product = productService.getProductById(productId);
+        return ResponseEntity.ok().body(product);
     }
 
     @Operation(summary = "Create a new product")
