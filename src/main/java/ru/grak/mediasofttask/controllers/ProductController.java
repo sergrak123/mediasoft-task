@@ -1,5 +1,7 @@
 package ru.grak.mediasofttask.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequestMapping("/api/products")
+@Tag(name = "Product Controller", description = "APIs for managing products")
 public class ProductController {
 
     @Autowired
@@ -25,11 +28,13 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @Operation(summary = "Get a list of all products")
     @GetMapping
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
 
+    @Operation(summary = "Get product details by ID")
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable(value = "id") UUID productId) {
         try {
@@ -41,6 +46,7 @@ public class ProductController {
         }
     }
 
+    @Operation(summary = "Create a new product")
     @PostMapping
     @Validated({ValidationMarker.OnCreate.class})
     public Product createProduct(@Valid @RequestBody Product product) {
@@ -49,6 +55,7 @@ public class ProductController {
         return productService.createProduct(product);
     }
 
+    @Operation(summary = "Update an existing product by ID")
     @PutMapping("/{id}")
     @Validated(ValidationMarker.OnUpdate.class)
     public ResponseEntity<Product> updateProduct(@PathVariable(value = "id") UUID productId,
@@ -62,6 +69,7 @@ public class ProductController {
         }
     }
 
+    @Operation(summary = "Delete product by ID")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteProduct(@PathVariable(value = "id") UUID productId) {
         try {
