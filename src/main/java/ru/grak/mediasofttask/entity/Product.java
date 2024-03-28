@@ -1,9 +1,9 @@
 package ru.grak.mediasofttask.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.Data;
+import ru.grak.mediasofttask.validation.ValidationMarker;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -24,20 +24,26 @@ public class Product {
     @Column(unique = true)
     private String article;
 
+    @NotBlank
     private String description;
 
     @NotBlank
     private String category;
 
     @NotNull
+    @Positive
     private BigDecimal price;
 
     @NotNull
+    @PositiveOrZero
     private Integer quantity;
 
+    @Null(groups = ValidationMarker.OnCreate.class)
+    @NotNull(groups = ValidationMarker.OnUpdate.class)
     private LocalDateTime lastQuantityChangeDateTime;
 
-    @NotNull
+    @Null(groups = ValidationMarker.OnCreate.class)
+    @NotNull(groups = ValidationMarker.OnUpdate.class)
     private LocalDateTime creationDateTime;
 
 }

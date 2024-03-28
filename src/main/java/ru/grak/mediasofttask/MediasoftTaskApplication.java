@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MediasofttaskApplication {
+public class MediasoftTaskApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MediasofttaskApplication.class, args);
+		SpringApplication.run(MediasoftTaskApplication.class, args);
 	}
 
 }
