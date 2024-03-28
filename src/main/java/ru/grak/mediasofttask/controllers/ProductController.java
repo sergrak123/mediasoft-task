@@ -21,7 +21,7 @@ import java.util.UUID;
 public class ProductController {
 
     @Autowired
-    private final ProductService productService;
+    private ProductService productService;
 
     public ProductController(ProductService productService) {
         this.productService = productService;

@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "ec757500-d222-403f-875d-b849e945ee3f",
+		"name": "Product Mediasoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21074335"
+	},
+	"item": [
+		{
+			"name": "getAllProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/b4450f66-3f48-4730-b407-db8dc339bf8a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"b4450f66-3f48-4730-b407-db8dc339bf8a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"name\",\r\n        \"article\": \"some\",\r\n        \"description\": \"description\",\r\n        \"category\": \"prodCategory\",\r\n        \"price\": 100.00,\r\n        \"quantity\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"name\",\r\n    \"article\": \"some\",\r\n    \"description\": \"description\",\r\n    \"category\": \"prodCategory\",\r\n    \"price\": 100.00,\r\n    \"quantity\": 20,\r\n    \"lastQuantityChangeDateTime\": \"2024-03-28T16:48:33.2012328\",\r\n    \"creationDateTime\": \"2024-03-28T16:48:33.2012328\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products/bee9072e-bb33-4cb8-97d0-e6eb54155669",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"bee9072e-bb33-4cb8-97d0-e6eb54155669"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products/a2f05e0a-e2ef-46fa-8b19-0f0ef9c8502a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"a2f05e0a-e2ef-46fa-8b19-0f0ef9c8502a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
